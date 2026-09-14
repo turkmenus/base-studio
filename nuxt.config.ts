@@ -6,7 +6,10 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@nuxtjs/google-fonts',
     '@nuxtjs/i18n',
-    '@nuxtjs/mcp-toolkit',
+    // '@nuxtjs/mcp-toolkit' is disabled for Cloudflare Workers builds
+    // because its Cloudflare provider imports "agents/mcp", which cannot
+    // be resolved in the Workers runtime. Re-enable only if you add MCP
+    // tools/resources and switch to a compatible target (e.g. Cloudflare Pages).
     '@nuxtjs/seo',
     '@pinia/nuxt',
     'nuxt-lucide-icons',
@@ -16,10 +19,20 @@ export default defineNuxtConfig({
     repository: {
       provider: 'github',
       owner: 'turkmenus',
-      repo: 'new-blog',
+      repo: 'base-studio',
       branch: 'main'
     }
   },
   devtools: { enabled: true },
   compatibilityDate: '2024-04-03',
+  devServer: {
+    host: '0.0.0.0',
+    port: 3000,
+  },
+  nitro: {
+    preset: 'cloudflare-module',
+    experimental: {
+      wasm: true,
+    },
+  },
 })  
