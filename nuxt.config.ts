@@ -30,7 +30,7 @@ export default defineNuxtConfig({
     port: 3000,
   },
   nitro: {
-    preset: 'cloudflare-module',
+    preset: 'cloudflare-pages',
     experimental: {
       wasm: true,
     },
