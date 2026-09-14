@@ -1,6 +1,3 @@
-# Cloudflare Workers configuration
-# Docs: https://developers.cloudflare.com/workers/wrangler/configuration/
-
 # Cloudflare Pages configuration
 # Docs: https://developers.cloudflare.com/pages/configuration/
 # This project is configured for Cloudflare Pages (Nitro preset: cloudflare-pages).
@@ -29,32 +26,6 @@ compatibility_flags = ["nodejs_compat_v2"]
 [vars]
 # Public runtime vars can be defined here and accessed via useRuntimeConfig()
 # NUXT_PUBLIC_SITE_URL = "https://base-studio.pages.dev"
-
-# [env.production.vars]
-# NUXT_PUBLIC_SITE_URL = "https://your-domain.com"
-
-# If you need custom routes on your own domain, configure them in the Cloudflare dashboard.
-# Workers auto-deploys to <name>.<subdomain>.workers.dev
-
-# Optional: bind a KV namespace for caching/session/state
-# [[kv_namespaces]]
-# binding = "CACHE"
-# id = "your_kv_namespace_id"
-
-# Optional: bind a D1 database if @nuxt/content needs a server-side DB at the edge
-# [[d1_databases]]
-# binding = "DB"
-# database_name = "base-studio-db"
-# database_id = "your_d1_database_id"
-
-# Optional: bind an R2 bucket for assets/uploads
-# [[r2_buckets]]
-# binding = "BUCKET"
-# bucket_name = "base-studio-assets"
-
-[vars]
-# Public runtime vars can be defined here and accessed via useRuntimeConfig()
-# NUXT_PUBLIC_SITE_URL = "https://base-studio.your-subdomain.workers.dev"
 
 # [env.production.vars]
 # NUXT_PUBLIC_SITE_URL = "https://your-domain.com"
