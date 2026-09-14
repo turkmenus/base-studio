@@ -1,16 +1,22 @@
-# Cloudflare Pages configuration
-# Docs: https://developers.cloudflare.com/pages/configuration/
-# This project is configured for Cloudflare Pages (Nitro preset: cloudflare-pages).
-# Pages handles static assets automatically, so no [site] bucket is needed.
+# Cloudflare Workers configuration
+# Docs: https://developers.cloudflare.com/workers/wrangler/configuration/
+# This project is configured for Cloudflare Workers (Nitro preset: cloudflare-module).
 
 name = "base-studio"
-compatibility_date = "2025-03-01"
+main = "./.output/server/index.mjs"
+compatibility_date = "2024-09-19"
 compatibility_flags = ["nodejs_compat_v2"]
 
-# Optional: bind a KV namespace for caching/session/state
-# [[kv_namespaces]]
-# binding = "CACHE"
-# id = "your_kv_namespace_id"
+# Workers Sites: static assets are uploaded from this bucket into KV and served
+# via the __STATIC_CONTENT_MANIFEST virtual module.
+[site]
+bucket = "./.output/public"
+
+# The KV namespace that backs the site manifest. Wrangler auto-generates the
+# __STATIC_CONTENT_MANIFEST module when [site] is present.
+[[kv_namespaces]]
+binding = "__STATIC_CONTENT_MANIFEST"
+id = "c72ec53842024533ab2215c9796c2132"
 
 # Optional: bind a D1 database if @nuxt/content needs a server-side DB at the edge
 # [[d1_databases]]
@@ -25,7 +31,7 @@ compatibility_flags = ["nodejs_compat_v2"]
 
 [vars]
 # Public runtime vars can be defined here and accessed via useRuntimeConfig()
-# NUXT_PUBLIC_SITE_URL = "https://base-studio.pages.dev"
+# NUXT_PUBLIC_SITE_URL = "https://base-studio.your-subdomain.workers.dev"
 
 # [env.production.vars]
 # NUXT_PUBLIC_SITE_URL = "https://your-domain.com"
