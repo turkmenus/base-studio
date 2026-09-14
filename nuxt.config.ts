@@ -1,4 +1,4 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+
 export default defineNuxtConfig({
   modules: [
     '@nuxt/content',
@@ -20,7 +20,7 @@ export default defineNuxtConfig({
       provider: 'github',
       owner: 'turkmenus',
       repo: 'base-studio',
-      branch: 'main'
+      branch: 'master'
     }
   },
   devtools: { enabled: true },
