@@ -43,7 +43,7 @@
     "h3": "^1.15.11",
     "nuxt": "^4.5.2",
     "nuxt-lucide-icons": "^2.1.0",
-    "nuxt-studio": "^1.7.0",
+    "nuxt-studio": "^1.4.0",
     "pinia": "^4.0.3",
     "playwright-core": "^1.63.0",
     "tailwindcss": "^4.3.3",
@@ -53,6 +53,6 @@
     "zod": "^4.6.5"
   },
   "devDependencies": {
-    "wrangler": "^3.114.1"
+    "wrangler": "^4.131.2"
   }
 }

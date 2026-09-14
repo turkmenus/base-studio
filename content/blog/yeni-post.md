@@ -2,6 +2,10 @@
 title: Yeni-post file
 ---
 
-# Yeni-post yazak
+#Yeni-post yazak
 
-> csdjcnsbkdcjn sdc skjcnsdklcnlsdkcnlsdc lscl slcs  cmscscm c s dcsdcmsdmc ldsc d csmcd scşmsdşcşsdcşlsmdcşl
+---
+Yazacaksan yaz artık bize nedür
+::card
+The content of the card
+::
